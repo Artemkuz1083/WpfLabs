@@ -10,6 +10,23 @@ namespace Rpn.Logic
 
     }
 
+    class Varieble : Token
+    {
+        public char Symbol;
+        public bool CheckX;
+
+        public Varieble(char symbol)
+        {
+            Symbol = symbol;
+            CheckX = IsVarieble(symbol);
+        }
+
+        private static bool IsVarieble(char symbol)
+        {
+            return symbol == 'x' || symbol == 'X';
+        }
+    }
+
     class Number : Token
     {
         public double Symbol;
@@ -24,6 +41,7 @@ namespace Rpn.Logic
     {
         public char Symbol;
         public int Priorety;
+
         public Operation(char symbol)
         {
             Symbol = symbol;
@@ -49,6 +67,7 @@ namespace Rpn.Logic
     {
         public char Symbol;
         public bool IsClosing;
+
         public Brackets(char symbol)
         {
             if (symbol != '(' && symbol != ')')
@@ -62,12 +81,13 @@ namespace Rpn.Logic
     public class RpnCalculator
     {
         public string result;
-        public RpnCalculator(string expression)
+
+        public RpnCalculator(string expression, double varX)
         {
             expression = expression.Replace(" ", string.Empty);
             var tokens = GetToken(expression);
             var rpn = RPN(tokens);
-            result = string.Join("", Result(rpn));
+            result = string.Join("", Result(rpn, varX));
         }
         private static List<Token> GetToken(string str)
         {
@@ -87,6 +107,10 @@ namespace Rpn.Logic
                 if (char.IsDigit(str[i]) || str[i] == ',')
                 {
                     num += str[i];
+                }
+                else if (new Varieble(str[i]).CheckX)
+                {
+                    tokens.Add(new Varieble(str[i]));
                 }
                 else if (str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/')
                 {
@@ -111,7 +135,7 @@ namespace Rpn.Logic
             Stack<Token> stack = new Stack<Token>();
             foreach (Token token in tokens)
             {
-                if (stack.Count == 0 && !(token is Number))
+                if (stack.Count == 0 && !(token is Number) && !(token is Varieble))
                 {
                     stack.Push(token);
                     continue;
@@ -154,7 +178,7 @@ namespace Rpn.Logic
                         stack.Push(token);
                     }
                 }
-                else if (token is Number)
+                else if (token is Number || token is Varieble)
                 {
                     prn.Add(token);
                 }
@@ -166,7 +190,7 @@ namespace Rpn.Logic
             return prn;
         }
 
-        private static Stack<double> Result(List<Token> expression)
+        private static Stack<double> Result(List<Token> expression, double varX)
         {
             Stack<double> stack = new Stack<double>();
             foreach (Token token in expression)
@@ -175,6 +199,10 @@ namespace Rpn.Logic
                 {
                     number = (Number)token;
                     stack.Push(number.Symbol);
+                }
+                else if (token is Varieble)
+                {
+                    stack.Push(varX);
                 }
                 else
                 {
@@ -198,7 +226,5 @@ namespace Rpn.Logic
                 default: return double.NaN;
             }
         }
-
     }
-
 }

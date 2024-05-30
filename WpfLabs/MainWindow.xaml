@@ -7,11 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="tbInput" HorizontalAlignment="Left" Margin="219,33,0,0" MinWidth = "120" MaxWidth = "360" Width = "Auto" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" FontSize="14"/>
+        <TextBox x:Name="tbExpInput" HorizontalAlignment="Left" Margin="219,33,0,0" MinWidth = "120" MaxWidth = "360" Width = "Auto" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" FontSize="14"/>
         <Label Content="Введите ваше выражение:" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label x:Name="lblResult" Content="" HorizontalAlignment="Left" Margin="112,83,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label Content="Результат:" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="lblResult" Content="" HorizontalAlignment="Left" Margin="112,121,0,0" VerticalAlignment="Top" FontSize="16" Width="151"/>
+        <Label Content="Результат:" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Button x:Name="btnCalculate" Content="Вычислить" Margin="310,0,0,53" Click="Button_Click" FontSize="16" Height="35" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="130"/>
-
+        <Label Content="Значение переменной X:" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="tbVarXInput" HorizontalAlignment="Left" Margin="219,85,0,0" MinWidth = "120" MaxWidth = "360" Width = "Auto" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" FontSize="14"/>
     </Grid>
 </Window>

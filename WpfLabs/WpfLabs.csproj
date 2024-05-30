@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RpnLogic\RpnLogic.csproj" />
+    <ProjectReference Include="..\RpnLogic\Rpn.Logic.csproj" />
   </ItemGroup>
 
 </Project>

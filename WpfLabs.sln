@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfLabs", "WpfLabs\WpfLabs.csproj", "{9750EE04-0CAB-4F01-A291-3590FD9033C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfLabs", "WpfLabs\WpfLabs.csproj", "{9750EE04-0CAB-4F01-A291-3590FD9033C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RpnLogic", "RpnLogic\RpnLogic.csproj", "{0F9DDB9B-76DC-4991-AEFF-3F374582FD4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rpn.Logic", "RpnLogic\Rpn.Logic.csproj", "{0F9DDB9B-76DC-4991-AEFF-3F374582FD4E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoFramework", "..\NoFramework\NoFramework\NoFramework.csproj", "{65B14AEA-64C5-45E0-B686-F1EC43287BB6}"
 EndProject

@@ -21,8 +21,9 @@ namespace WpfLabs
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string expression = tbInput.Text;
-            var result = new RpnCalculator(expression);
+            string expression = tbExpInput.Text;
+            double varX = Convert.ToDouble(tbVarXInput.Text);
+            var result = new RpnCalculator(expression, varX);
             lblResult.Content = result.result;
         }
     }
