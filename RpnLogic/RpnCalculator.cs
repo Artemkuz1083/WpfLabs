@@ -12,12 +12,10 @@ namespace Rpn.Logic
 
     class Varieble : Token
     {
-        public char Symbol;
         public bool CheckX;
 
         public Varieble(char symbol)
         {
-            Symbol = symbol;
             CheckX = IsVarieble(symbol);
         }
 
