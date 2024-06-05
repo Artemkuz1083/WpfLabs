@@ -49,7 +49,7 @@ namespace WpfLabs
             for (double x = start; x <= end; x += step)
             {
                 var y = Convert.ToDouble(new RpnCalculator(expression, x).result);
-                if (!double.IsInfinity(y))
+                if (!double.IsInfinity(y) && !double.IsNaN(y))
                 {
                     points.Add(new Point(x, y));
                 }
