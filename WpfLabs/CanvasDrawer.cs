@@ -68,9 +68,6 @@ namespace WpfLabs
             for (int i = 0; i < points.Count - 1; i++)
             {
                 DrawLine(points[i].ToUiCoordinates(_canvas, _scale), points[i + 1].ToUiCoordinates(_canvas, _scale), Brushes.Red, 2);
-            }
-            for (int i = 0; i < points.Count - 1; i++)
-            {
                 DrawPoint(points[i].ToUiCoordinates(_canvas, _scale), Brushes.DarkRed);
             }
             DrawPoint(points[^1].ToUiCoordinates(_canvas, _scale), Brushes.DarkRed);
